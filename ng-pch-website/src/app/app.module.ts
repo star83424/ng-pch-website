@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { AgePipe } from './age.pipe';
+import { AgeImpurePipe } from './age-impure.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
-    HeroesComponent
+    HeroesComponent,
+    AgePipe,
+    AgeImpurePipe
   ],
   imports: [
     BrowserModule,
