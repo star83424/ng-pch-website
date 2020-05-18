@@ -10,6 +10,7 @@ import { AgePipe } from './age.pipe';
 import { AgeImpurePipe } from './age-impure.pipe';
 import { ZippyComponent } from './zippy/zippy.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MessagesComponent } from './messages/messages.component';
     AgePipe,
     AgeImpurePipe,
     ZippyComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
