@@ -1,11 +1,13 @@
-<div *ngIf="hero">
-  <div><span>id: </span>{{hero.id}}</div>
-  <div><span>name: </span>{{hero.name | uppercase}}</div>
-  <div><span>age: </span>{{hero.birthday | age : false}}</div>
+<app-zippy (openZip)="onOpen($event)" (closeZip)="onClose($event)">
+  <div *ngIf="hero">
+    <div><span>id: </span>{{hero.id}}</div>
+    <div><span>name: </span>{{hero.name | uppercase}}</div>
+    <div><span>age: </span>{{hero.birthday | age : false}}</div>
 
-  <div>
-    <label>
-      <input [(ngModel)]="hero.name" placeholder="name" />
-    </label>
+    <div>
+      <label>
+        <input [(ngModel)]="hero.name" placeholder="name" />
+      </label>
+    </div>
   </div>
-</div>
+</app-zippy>

@@ -33,14 +33,4 @@ export class HeroesComponent implements OnInit {
     });
   }
 
-  onOpen(e: any): void {
-    this.messageService.add('Zippy\'s onOpen.');
-    // console.log('Zippy\'s onOpen:', e);
-  }
-
-  onClose(e: any): void {
-    this.messageService.add('Zippy\'s onClose.');
-    // console.log('Zippy\'s onClose:', e);
-  }
-
 }
