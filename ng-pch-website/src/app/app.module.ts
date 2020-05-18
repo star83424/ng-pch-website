@@ -9,6 +9,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { AgePipe } from './age.pipe';
 import { AgeImpurePipe } from './age-impure.pipe';
 import { ZippyComponent } from './zippy/zippy.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ZippyComponent } from './zippy/zippy.component';
     AgePipe,
     AgeImpurePipe,
     ZippyComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
