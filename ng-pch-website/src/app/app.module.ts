@@ -8,6 +8,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { AgePipe } from './age.pipe';
 import { AgeImpurePipe } from './age-impure.pipe';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AgeImpurePipe } from './age-impure.pipe';
     HeroDetailComponent,
     HeroesComponent,
     AgePipe,
-    AgeImpurePipe
+    AgeImpurePipe,
+    ZippyComponent,
   ],
   imports: [
     BrowserModule,
