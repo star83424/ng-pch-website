@@ -7,7 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 //      to the route whose path is '/dashboard'.
 // 'dashboard' is equals to '/dashboard'.
 const routes: Routes = [
-  {path: 'heroes', component: HeroesComponent}
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  {path: 'heroes', component: HeroesComponent},
   {path: 'dashboard', component: DashboardComponent}
 ];
 
