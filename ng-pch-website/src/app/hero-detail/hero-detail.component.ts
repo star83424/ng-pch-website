@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
 import { MessageService } from '../message.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { HeroService } from '../hero.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class HeroDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private location: Location,
     private heroService: HeroService,
     private messageService: MessageService) { }
 
@@ -41,6 +43,24 @@ export class HeroDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.heroService.getHeroById(id).subscribe(hero => this.hero = hero);
   }
+
+  /**
+   * Location.replaceState() only change the current url
+   * But the history will always be the original url
+   *
+   * ex: if go back, u will still be back to the original one
+   *
+   * @memberof HeroDetailComponent
+   */
+  replaceState(): void {
+    this.location.replaceState('detail/10');
+    console.log(this.location.path());
+  }
+
+  goBack(): void {
+    this.messageService.add(`Location State: ${this.location.getState()}`);
+    console.log(this.location.path());
+    this.location.back();
   }
 
 }
