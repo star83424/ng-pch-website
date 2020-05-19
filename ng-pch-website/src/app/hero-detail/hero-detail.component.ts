@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
 import { MessageService } from '../message.service';
+import { ActivatedRoute } from '@angular/router';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -9,21 +11,36 @@ import { MessageService } from '../message.service';
 })
 export class HeroDetailComponent implements OnInit {
 
-  @Input() hero: Hero;
+  hero: Hero;
 
-  constructor(private messageService: MessageService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private messageService: MessageService) { }
 
   ngOnInit() {
+    // this.getHeroAndFiltById();
+    this.getHeroById();
   }
 
   onOpen(e: any): void {
     this.messageService.add('Zippy\'s onOpen.');
-    // console.log('Zippy\'s onOpen:', e);
   }
 
   onClose(e: any): void {
     this.messageService.add('Zippy\'s onClose.');
-    // console.log('Zippy\'s onClose:', e);
+  }
+
+  getHeroAndFiltById(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.heroService.getHeroes().subscribe(heroes => this.hero = heroes.find(hero => id === hero.id.toString()));
+  }
+
+  getHeroById(): void {
+    // The JavaScript (+) operator converts the string to a number, which is what a hero id should be.
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.heroService.getHeroById(id).subscribe(hero => this.hero = hero);
+  }
   }
 
 }
